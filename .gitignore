@@ -2,3 +2,13 @@
 kaptast-formula1-backend/kaptast-formula1-api/.vs/kaptast-formula1-api/v16/.suo
 
 *.cache
+
+kaptast-formula1-backend/kaptast-formula1-api.ViewModels/bin/Debug/netcoreapp3.1/
+
+kaptast-formula1-backend/kaptast-formula1-api.ViewModels/obj/Debug/netcoreapp3.1/
+
+kaptast-formula1-backend/kaptast-formula1-api.Services/obj/Debug/netcoreapp3.1/
+
+*.pdb
+
+*.dll
