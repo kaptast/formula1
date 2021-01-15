@@ -60,7 +60,7 @@ namespace kaptast_formula1_api.Repository.Repositories
         /// <param name="entity">Entity to be modified</param>
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            this._dbContext.Update(entity);
         }
     }
 }
