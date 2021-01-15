@@ -1,9 +1,8 @@
-﻿using kaptast_formula1_api.Repository.Entities;
+﻿using kaptast_formula1_api.Repository.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace kaptast_formula1_api.Repository.Repositories
+namespace kaptast_formula1_api.Repository.Repositories.Interfaces
 {
     interface IRepository<T> where T : IEntity
     {

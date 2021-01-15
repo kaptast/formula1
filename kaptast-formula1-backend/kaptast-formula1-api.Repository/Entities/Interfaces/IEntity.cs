@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace kaptast_formula1_api.Repository.Entities
+namespace kaptast_formula1_api.Repository.Entities.Interfaces
 {
     interface IEntity
     {

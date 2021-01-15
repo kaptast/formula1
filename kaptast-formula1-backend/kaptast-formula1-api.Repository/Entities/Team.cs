@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using kaptast_formula1_api.Repository.Entities.Interfaces;
+using System;
 
 namespace kaptast_formula1_api.Repository.Entities
 {
