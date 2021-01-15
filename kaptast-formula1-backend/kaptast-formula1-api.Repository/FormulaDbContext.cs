@@ -11,7 +11,7 @@ namespace kaptast_formula1_api.Repository
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(":memory:");
+            optionsBuilder.UseSqlite("Filename=:memory:");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
