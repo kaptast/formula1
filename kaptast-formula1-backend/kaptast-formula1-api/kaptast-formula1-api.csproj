@@ -9,5 +9,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\kaptast-formula1-api.Repository\kaptast-formula1-api.Repository.csproj" />
+  </ItemGroup>
+
 
 </Project>
