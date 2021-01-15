@@ -10,7 +10,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\kaptast-formula1-api.Repository\kaptast-formula1-api.Repository.csproj" />
+    <ProjectReference Include="..\kaptast-formula1-api.Services\kaptast-formula1-api.Services.csproj" />
+    <ProjectReference Include="..\kaptast-formula1-api.ViewModels\kaptast-formula1-api.ViewModels.csproj" />
   </ItemGroup>
 
 
