@@ -5,4 +5,8 @@
     <RootNamespace>kaptast_formula1_api.Services</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\kaptast-formula1-api.ViewModels\kaptast-formula1-api.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>
