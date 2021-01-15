@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 import { Team } from './team';
 import { TEAMS } from './mock-teams';
@@ -10,7 +11,11 @@ export class TeamService {
 
   constructor() { }
 
-  getTeams(): Team[] {
-    return TEAMS;
+  getTeams(): Observable<Team[]> {
+    return of(TEAMS);
+  }
+
+  getTeam(id: number): Observable<Team> {
+    return of(TEAMS.find(team => team.id === id));
   }
 }
