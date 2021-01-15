@@ -6,6 +6,8 @@ using AutoMapper;
 using kaptast_formula1_api.Repository;
 using kaptast_formula1_api.Repository.Repositories;
 using kaptast_formula1_api.Repository.Repositories.Interfaces;
+using kaptast_formula1_api.Services.Interfaces;
+using kaptast_formula1_api.Services.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -40,6 +42,8 @@ namespace kaptast_formula1_api
             services.AddControllers();
 
             services.AddScoped<ITeamRepository, TeamRepository>();
+            services.AddScoped<ITeamService, TeamService>();
+            services.AddScoped<IAuthService, AuthService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
