@@ -10,6 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\kaptast-formula1-api.Repository\kaptast-formula1-api.Repository.csproj" />
   </ItemGroup>
 
