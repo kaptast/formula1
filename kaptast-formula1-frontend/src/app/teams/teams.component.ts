@@ -21,7 +21,8 @@ export class TeamsComponent implements OnInit {
   }
 
   getTeams(): void {
-    this.teams = this.teamService.getTeams();
+    this.teamService.getTeams()
+      .subscribe(teams => this.teams = teams);
   }
 
 }
