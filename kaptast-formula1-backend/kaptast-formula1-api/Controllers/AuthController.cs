@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using kaptast_formula1_api.Services.Interfaces;
 using kaptast_formula1_api.ViewModels.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -14,13 +15,11 @@ namespace kaptast_formula1_api.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly IAuthService _authService;
 
-        public AuthController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AuthController(IAuthService auth)
         {
-            this._userManager = userManager;
-            this._signInManager = signInManager;
+            this._authService = auth;
         }
 
         [HttpPost]
@@ -29,7 +28,7 @@ namespace kaptast_formula1_api.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, true, lockoutOnFailure: false);
+                var result = await _authService.Login(model);
                 if (result.Succeeded)
                 {
                     return LocalRedirect("/");
@@ -40,9 +39,9 @@ namespace kaptast_formula1_api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> LogOff()
+        public IActionResult LogOff()
         {
-            await _signInManager.SignOutAsync();
+            _authService.LogOff();
             return Ok();
         }
 
