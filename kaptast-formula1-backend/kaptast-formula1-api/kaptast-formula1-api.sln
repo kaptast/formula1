@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kaptast-formula1-api.Reposi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kaptast-formula1-api.Services", "..\kaptast-formula1-api.Services\kaptast-formula1-api.Services.csproj", "{9B834498-01C3-4E90-8EFC-E486C5FEAE9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kaptast-formula1-api.ViewModels", "..\kaptast-formula1-api.ViewModels\kaptast-formula1-api.ViewModels.csproj", "{C7C3A327-3055-4FE6-A7B8-2B1244FCFA7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9B834498-01C3-4E90-8EFC-E486C5FEAE9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B834498-01C3-4E90-8EFC-E486C5FEAE9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B834498-01C3-4E90-8EFC-E486C5FEAE9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C3A327-3055-4FE6-A7B8-2B1244FCFA7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C3A327-3055-4FE6-A7B8-2B1244FCFA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C3A327-3055-4FE6-A7B8-2B1244FCFA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C3A327-3055-4FE6-A7B8-2B1244FCFA7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
