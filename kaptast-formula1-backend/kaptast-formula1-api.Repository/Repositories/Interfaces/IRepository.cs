@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace kaptast_formula1_api.Repository.Repositories.Interfaces
 {
-    interface IRepository<T> where T : IEntity
+    public interface IRepository<T> where T : IEntity
     {
         Task<T> Get(Guid Id);
         Task<List<T>> Get();

@@ -2,7 +2,7 @@
 
 namespace kaptast_formula1_api.Repository.Repositories.Interfaces
 {
-    interface IUserRepository : IRepository<User>
+    public interface IUserRepository : IRepository<User>
     {
     }
 }
