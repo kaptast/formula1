@@ -5,4 +5,8 @@
     <RootNamespace>kaptast_formula1_api.ViewModels</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Profiles\" />
+  </ItemGroup>
+
 </Project>

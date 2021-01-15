@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace kaptast_formula1_api.ViewModels
+namespace kaptast_formula1_api.ViewModels.Models
 {
     public class UserViewModel
     {

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using kaptast_formula1_api.Repository;
 using kaptast_formula1_api.Repository.Repositories;
 using kaptast_formula1_api.Repository.Repositories.Interfaces;
@@ -28,6 +29,7 @@ namespace kaptast_formula1_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
 
             services.AddEntityFrameworkSqlite().AddDbContext<FormulaDbContext>();
