@@ -9,6 +9,7 @@ namespace kaptast_formula1_api.Services.Interfaces
 {
     public interface IAuthService
     {
+        void Register(UserViewModel userModel);
         Task<SignInResult> Login(UserViewModel user);
         void LogOff();
     }

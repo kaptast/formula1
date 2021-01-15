@@ -24,6 +24,19 @@ namespace kaptast_formula1_api.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        public IActionResult Register(UserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _authService.Register(model);
+                return Ok();
+            }
+
+            return BadRequest();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(UserViewModel model)
         {
             if (ModelState.IsValid)
