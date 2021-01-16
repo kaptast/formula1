@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\kaptast-formula1-api.Repository\kaptast-formula1-api.Repository.csproj" />
+    <ProjectReference Include="..\kaptast-formula1-api.Repository\KaptastFormula1Api.Repository.csproj" />
   </ItemGroup>
 
 </Project>

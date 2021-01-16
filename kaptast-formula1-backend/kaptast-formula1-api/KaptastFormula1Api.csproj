@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\kaptast-formula1-api.Repository\kaptast-formula1-api.Repository.csproj" />
-    <ProjectReference Include="..\kaptast-formula1-api.Services\kaptast-formula1-api.Services.csproj" />
-    <ProjectReference Include="..\kaptast-formula1-api.ViewModels\kaptast-formula1-api.ViewModels.csproj" />
+    <ProjectReference Include="..\kaptast-formula1-api.Repository\KaptastFormula1Api.Repository.csproj" />
+    <ProjectReference Include="..\kaptast-formula1-api.Services\KaptastFormula1Api.Services.csproj" />
+    <ProjectReference Include="..\kaptast-formula1-api.ViewModels\KaptastFormula1Api.ViewModels.csproj" />
   </ItemGroup>
 
 
