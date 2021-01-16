@@ -37,6 +37,14 @@ namespace kaptast_formula1_api
         {
             services.AddAutoMapper(typeof(TeamProfile));
 
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin();
+                });
+            });
+
             var connection = new SqliteConnection("DataSource=file::memory:?cache=shared");
             connection.Open();
 
@@ -67,6 +75,8 @@ namespace kaptast_formula1_api
             db.Database.EnsureCreated();
 
             app.UseHttpsRedirection();
+
+            app.UseCors();
 
             app.UseRouting();
 
