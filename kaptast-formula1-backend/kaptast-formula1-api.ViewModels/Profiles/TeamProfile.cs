@@ -4,7 +4,7 @@ using kaptast_formula1_api.ViewModels.Models;
 
 namespace kaptast_formula1_api.ViewModels.Profiles
 {
-    class TeamProfile : Profile
+    public class TeamProfile : Profile
     {
         public TeamProfile()
         {

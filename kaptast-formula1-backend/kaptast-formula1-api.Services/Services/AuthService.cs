@@ -14,6 +14,12 @@ namespace kaptast_formula1_api.Services.Services
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
 
+        public AuthService(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        {
+            this._signInManager = signInManager;
+            this._userManager = userManager;
+        }
+
         public async void Register(UserViewModel userModel)
         {
             var user = new IdentityUser() { UserName = userModel.UserName };
