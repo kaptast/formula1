@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 
 import { Team } from './team';
@@ -32,6 +32,37 @@ export class TeamService {
         catchError(this.handleError<Team>(`getTeam id=${id}`))
       )
   }
+
+  updateTeam(team: Team): Observable<any> {
+    const url = `${this.appConfigService.apiBaseUrl}/team`;
+    return this.http.put(url, team, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<any>('updateTeam'))
+      );
+  }
+
+  addTeam(team: Team): Observable<Team> {
+    const url = `${this.appConfigService.apiBaseUrl}/team`;
+    return this.http.post<Team>(url, team, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<Team>('addTeam'))
+      );
+  }
+
+  deleteTeam(team: Team | string): Observable<Team> {
+    const id = typeof team === 'string' ? team : team.id;
+    const url = `${this.appConfigService.apiBaseUrl}/team/${id}`;
+
+    return this.http.delete<Team>(url, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<Team>('deleteTeam'))
+      );
+  }
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+  }
+
 
   private handleError<T>(msg = 'message', result?: T) {
     return (error: any): Observable<T> => {
