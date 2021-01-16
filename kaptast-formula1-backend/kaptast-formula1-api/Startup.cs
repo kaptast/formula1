@@ -41,7 +41,7 @@ namespace kaptast_formula1_api
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.AllowAnyOrigin();
+                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                 });
             });
 
