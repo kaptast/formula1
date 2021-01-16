@@ -9,10 +9,15 @@ namespace kaptast_formula1_api.Repository
     {
         public DbSet<Team> Teams { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public FormulaDbContext(DbContextOptions options)
+            : base(options)
+        {
+        }
+
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Filename=:memory:");
-        }
+        }*/
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
