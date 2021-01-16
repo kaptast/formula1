@@ -8,7 +8,7 @@ namespace kaptast_formula1_api.ViewModels.Profiles
     {
         public TeamProfile()
         {
-            CreateMap<Team, TeamViewModel>();
+            CreateMap<Team, TeamViewModel>().ReverseMap();
         }
     }
 }
