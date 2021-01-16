@@ -1,10 +1,7 @@
-import { getTranslationDeclStmts } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
 
 import { Team } from '../team';
-
-import { TeamService} from '../team.service';
+import { TeamService } from '../team.service';
 
 @Component({
   selector: 'app-teams',
@@ -23,6 +20,24 @@ export class TeamsComponent implements OnInit {
   getTeams(): void {
     this.teamService.getTeams()
       .subscribe(teams => this.teams = teams);
+  }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) {
+      return;
+    }
+
+    this.teamService.addTeam({ name } as Team)
+      .subscribe(_ => {
+        this.getTeams();
+      });
+  }
+
+  delete(team: Team): void {
+    this.teams = this.teams.filter(t => t != team);
+    this.teamService.deleteTeam(team)
+      .subscribe();
   }
 
 }

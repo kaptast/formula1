@@ -35,6 +35,8 @@ export class TeamService {
 
   updateTeam(team: Team): Observable<any> {
     const url = `${this.appConfigService.apiBaseUrl}/team`;
+    console.log(team);
+    console.log(url);
     return this.http.put(url, team, this.httpOptions)
       .pipe(
         catchError(this.handleError<any>('updateTeam'))
@@ -43,6 +45,8 @@ export class TeamService {
 
   addTeam(team: Team): Observable<Team> {
     const url = `${this.appConfigService.apiBaseUrl}/team`;
+    console.log(team);
+    console.log(url);
     return this.http.post<Team>(url, team, this.httpOptions)
       .pipe(
         catchError(this.handleError<Team>('addTeam'))
