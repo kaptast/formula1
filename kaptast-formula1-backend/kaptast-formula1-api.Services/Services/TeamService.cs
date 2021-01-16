@@ -21,7 +21,7 @@ namespace kaptast_formula1_api.Services.Services
             this._mapper = mapper;
         }
 
-        public async void Add(TeamViewModel team)
+        public async Task Add(TeamViewModel team)
         {
             Team teamEntity = _mapper.Map<Team>(team);
 
@@ -29,9 +29,9 @@ namespace kaptast_formula1_api.Services.Services
             await this._repository.Save();
         }
 
-        public async void Delete(TeamViewModel team)
+        public async Task Delete(Guid id)
         {
-            Team teamEntity = _mapper.Map<Team>(team);
+            var teamEntity = await this._repository.Get(id);
 
             this._repository.Delete(teamEntity);
             await this._repository.Save();
@@ -51,7 +51,7 @@ namespace kaptast_formula1_api.Services.Services
             return _mapper.Map<List<Team>, IEnumerable<TeamViewModel>>(teams);
         }
 
-        public async void Update(TeamViewModel team)
+        public async Task Update(TeamViewModel team)
         {
             Team teamEntity = _mapper.Map<Team>(team);
 

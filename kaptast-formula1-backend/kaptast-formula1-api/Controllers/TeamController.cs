@@ -31,5 +31,29 @@ namespace kaptast_formula1_api.Controllers
         {
             return await this._teamService.Get(id);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(TeamViewModel teamViewModel)
+        {
+            await this._teamService.Add(teamViewModel);
+
+            return Ok();
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(TeamViewModel teamViewModel)
+        {
+            await this._teamService.Update(teamViewModel);
+
+            return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await this._teamService.Delete(id);
+
+            return Ok();
+        }
     }
 }
