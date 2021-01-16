@@ -12,3 +12,7 @@ kaptast-formula1-backend/kaptast-formula1-api.Services/obj/Debug/netcoreapp3.1/
 *.pdb
 
 *.dll
+
+.vs/KaptastFormula1Api/v16/.suo
+
+.vs/kaptast-formula1-api/v16/.suo

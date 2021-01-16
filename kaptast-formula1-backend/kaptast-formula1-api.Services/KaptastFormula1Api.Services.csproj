@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\kaptast-formula1-api.ViewModels\kaptast-formula1-api.ViewModels.csproj" />
+    <ProjectReference Include="..\kaptast-formula1-api.ViewModels\KaptastFormula1Api.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

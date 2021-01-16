@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kaptast-formula1-api", "kaptast-formula1-api.csproj", "{151F90AD-3878-4AF2-83DC-C217FA78BD88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kaptast-formula1-api", "kaptast-formula1-backend\kaptast-formula1-api\kaptast-formula1-api.csproj", "{151F90AD-3878-4AF2-83DC-C217FA78BD88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kaptast-formula1-api.Repository", "..\kaptast-formula1-api.Repository\kaptast-formula1-api.Repository.csproj", "{B9B29196-940C-40E0-B4D8-CEB5366F0FD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kaptast-formula1-api.Repository", "kaptast-formula1-backend\kaptast-formula1-api.Repository\kaptast-formula1-api.Repository.csproj", "{B9B29196-940C-40E0-B4D8-CEB5366F0FD5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kaptast-formula1-api.Services", "..\kaptast-formula1-api.Services\kaptast-formula1-api.Services.csproj", "{9B834498-01C3-4E90-8EFC-E486C5FEAE9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kaptast-formula1-api.Services", "kaptast-formula1-backend\kaptast-formula1-api.Services\kaptast-formula1-api.Services.csproj", "{9B834498-01C3-4E90-8EFC-E486C5FEAE9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kaptast-formula1-api.ViewModels", "..\kaptast-formula1-api.ViewModels\kaptast-formula1-api.ViewModels.csproj", "{C7C3A327-3055-4FE6-A7B8-2B1244FCFA7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kaptast-formula1-api.ViewModels", "kaptast-formula1-backend\kaptast-formula1-api.ViewModels\kaptast-formula1-api.ViewModels.csproj", "{C7C3A327-3055-4FE6-A7B8-2B1244FCFA7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

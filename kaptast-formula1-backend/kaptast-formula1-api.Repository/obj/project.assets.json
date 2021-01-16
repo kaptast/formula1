@@ -1197,9 +1197,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.Repository\\kaptast-formula1-api.Repository.csproj",
-      "projectName": "kaptast-formula1-api.Repository",
-      "projectPath": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.Repository\\kaptast-formula1-api.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.Repository\\KaptastFormula1Api.Repository.csproj",
+      "projectName": "KaptastFormula1Api.Repository",
+      "projectPath": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.Repository\\KaptastFormula1Api.Repository.csproj",
       "packagesPath": "C:\\Users\\kapta\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.Repository\\obj\\",
       "projectStyle": "PackageReference",

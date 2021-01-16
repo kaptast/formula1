@@ -513,7 +513,7 @@
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       },
-      "kaptast-formula1-api.Repository/1.0.0": {
+      "KaptastFormula1Api.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -522,10 +522,10 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.11"
         },
         "compile": {
-          "bin/placeholder/kaptast-formula1-api.Repository.dll": {}
+          "bin/placeholder/KaptastFormula1Api.Repository.dll": {}
         },
         "runtime": {
-          "bin/placeholder/kaptast-formula1-api.Repository.dll": {}
+          "bin/placeholder/KaptastFormula1Api.Repository.dll": {}
         }
       }
     }
@@ -1394,16 +1394,16 @@
         "version.txt"
       ]
     },
-    "kaptast-formula1-api.Repository/1.0.0": {
+    "KaptastFormula1Api.Repository/1.0.0": {
       "type": "project",
-      "path": "../kaptast-formula1-api.Repository/kaptast-formula1-api.Repository.csproj",
-      "msbuildProject": "../kaptast-formula1-api.Repository/kaptast-formula1-api.Repository.csproj"
+      "path": "../kaptast-formula1-api.Repository/KaptastFormula1Api.Repository.csproj",
+      "msbuildProject": "../kaptast-formula1-api.Repository/KaptastFormula1Api.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.0",
-      "kaptast-formula1-api.Repository >= 1.0.0"
+      "KaptastFormula1Api.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1413,9 +1413,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.ViewModels\\kaptast-formula1-api.ViewModels.csproj",
-      "projectName": "kaptast-formula1-api.ViewModels",
-      "projectPath": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.ViewModels\\kaptast-formula1-api.ViewModels.csproj",
+      "projectUniqueName": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.ViewModels\\KaptastFormula1Api.ViewModels.csproj",
+      "projectName": "KaptastFormula1Api.ViewModels",
+      "projectPath": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.ViewModels\\KaptastFormula1Api.ViewModels.csproj",
       "packagesPath": "C:\\Users\\kapta\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
@@ -1436,8 +1436,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.Repository\\kaptast-formula1-api.Repository.csproj": {
-              "projectPath": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.Repository\\kaptast-formula1-api.Repository.csproj"
+            "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.Repository\\KaptastFormula1Api.Repository.csproj": {
+              "projectPath": "C:\\Users\\kapta\\source\\repos\\kaptast-fullstack\\kaptast-formula1-backend\\kaptast-formula1-api.Repository\\KaptastFormula1Api.Repository.csproj"
             }
           }
         }
