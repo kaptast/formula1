@@ -1,9 +1,19 @@
 <div *ngIf="team">
 <h2>{{team.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{team.id}}</div>
   <div>
     <label>name:
       <input [(ngModel)]="team.name" placeholder="name"/>
     </label>
+    <label>Year of foundation:
+      <input [(ngModel)]="team.yearOfFoundation" type="number" placeholder="yearOfFoundation" />
+    </label>
+    <label>Entry paid:
+      <input [(ngModel)]="team.entryPaid" type="checkbox" placeholder="paid" />
+    </label>
+    <label>Championships won:
+      <input [(ngModel)]="team.championshipsWon" type="number" placeholder="championshipsWon" />
+    </label>
   </div>
+  <button (click)="save()">Save</button>
+  <button class="delete" title="delete team" (click)="delete()">Delete Team</button>
 </div>

@@ -1,7 +1,7 @@
 export interface Team {
     id: string,
     name: string,
-    paid: boolean,
-    dateOfFoundation: number,
+    entryPaid: boolean,
+    yearOfFoundation: number,
     championshipsWon: number
 }

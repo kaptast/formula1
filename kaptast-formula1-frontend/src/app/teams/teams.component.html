@@ -4,6 +4,7 @@
         <a routerLink="/team/{{team.id}}">
             {{team.name}}
         </a>
+        <button class="delete" title="delete team" (click)="delete(team)">Delete</button>
     </li>
 </ul>
 <div>

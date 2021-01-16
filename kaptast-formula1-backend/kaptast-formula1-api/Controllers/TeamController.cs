@@ -48,7 +48,7 @@ namespace kaptast_formula1_api.Controllers
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             await this._teamService.Delete(id);

@@ -14,7 +14,7 @@ export class TeamComponent implements OnInit {
   @Input() team: Team;
 
   constructor(
-    private teamService: TeamService, 
+    private teamService: TeamService,
     private route: ActivatedRoute,
     private location: Location
   ) { }
@@ -26,7 +26,21 @@ export class TeamComponent implements OnInit {
   getTeam(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.teamService.getTeam(id)
-      .subscribe(team => this.team = team);
+      .subscribe(team => {
+        this.team = team;
+        console.log(team);
+      });
+  }
+
+  save(): void {
+    console.log(this.team);
+    this.teamService.updateTeam(this.team)
+      .subscribe(() => this.getTeam());
+  }
+
+  delete(): void {
+    this.teamService.deleteTeam(this.team)
+      .subscribe(() => this.location.back());
   }
 
 }
