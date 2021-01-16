@@ -24,7 +24,7 @@ export class TeamComponent implements OnInit {
   }
 
   getTeam(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.teamService.getTeam(id)
       .subscribe(team => this.team = team);
   }
