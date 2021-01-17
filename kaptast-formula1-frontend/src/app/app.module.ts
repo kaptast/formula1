@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { JwtModule } from "@auth0/angular-jwt";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TeamsComponent } from './teams/teams.component';
@@ -15,6 +14,7 @@ import { AuthService } from './auth/auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { TokenInterceptor } from './auth/token.interceptor';
 
 export function tokenGetter() {
   console.log("getting access token");
@@ -34,13 +34,7 @@ export function tokenGetter() {
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: tokenGetter,
-        allowedDomains: ["localhost:5000", "localhost:44312"]
-      }
-    })
+    MaterialModule
   ],
   providers: [
     {
@@ -60,6 +54,11 @@ export function tokenGetter() {
             .then(() => authService.checkLogin());
         };
       }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

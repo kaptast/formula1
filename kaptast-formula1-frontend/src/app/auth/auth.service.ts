@@ -26,7 +26,6 @@ export class AuthService {
     return this.http.get(url)
       .toPromise()
       .then(result => {
-        console.log(result);
         this.isLoggedIn = true;
       })
       .catch(err => {
@@ -42,9 +41,7 @@ export class AuthService {
     return this.http.post<boolean>(url, user, this.httpOptions)
       .pipe(
         map(result => {
-          console.log(result);
           this.setSession(result);
-          console.log('login successful!');
           this.isLoggedIn = true;
           return true;
         }),
@@ -58,11 +55,14 @@ export class AuthService {
       .pipe(
         tap(() => {
           this.isLoggedIn = false;
-          localStorage.removeItem('access_token');
-          localStorage.removeItem('expires_at');
+          this.removeSession();
         }),
         catchError(this.handleError<boolean>('error at logout', false))
       );
+  }
+
+  getToken(): string {
+    return localStorage.getItem('access_token');
   }
 
   httpOptions = {
@@ -77,9 +77,14 @@ export class AuthService {
     }
   }
 
-  private setSession(authResult) {
+  private setSession(authResult): void {
     console.log("setting token");
     localStorage.setItem('access_token', authResult.token);
     localStorage.setItem('expires_at', authResult.expires);
+  }
+
+  private removeSession(): void {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('expires_at');
   }
 }
