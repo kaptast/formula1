@@ -56,6 +56,11 @@ namespace kaptast_formula1_api
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<FormulaDbContext>()
                 .AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            });
 
             services.AddControllers();
 
@@ -65,7 +70,7 @@ namespace kaptast_formula1_api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, FormulaDbContext db)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, FormulaDbContext db, IAuthService authService)
         {
             if (env.IsDevelopment())
             {
@@ -82,6 +87,8 @@ namespace kaptast_formula1_api
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            authService.Register(new ViewModels.Models.UserViewModel { UserName = "admin", Password = "f1test2018" });
 
             app.UseEndpoints(endpoints =>
             {
