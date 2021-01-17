@@ -1,19 +1,46 @@
 <div *ngIf="team">
-<h2>{{team.name | uppercase}} Details</h2>
-  <div>
-    <label>name:
-      <input [(ngModel)]="team.name" placeholder="name"/>
-    </label>
-    <label>Year of foundation:
-      <input [(ngModel)]="team.yearOfFoundation" type="number" placeholder="yearOfFoundation" />
-    </label>
-    <label>Entry paid:
-      <input [(ngModel)]="team.entryPaid" type="checkbox" placeholder="paid" />
-    </label>
-    <label>Championships won:
-      <input [(ngModel)]="team.championshipsWon" type="number" placeholder="championshipsWon" />
-    </label>
-  </div>
-  <button (click)="save()">Save</button>
-  <button class="delete" title="delete team" (click)="delete()">Delete Team</button>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        {{team.name | uppercase}} Details
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <div>
+          <mat-form-field>
+            <mat-label>Team name</mat-label>
+            <input matInput name="teamName" [(ngModel)]="team.name" placeholder="name" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Year of foundation</mat-label>
+            <input matInput name="foundationYear" [(ngModel)]="team.yearOfFoundation" type="number"
+              placeholder="yearOfFoundation" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-checkbox [checked]="team.entryPaid" (change)="checkboxValueChange()" color="primary">
+            Entry Paid
+          </mat-checkbox>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Championships won</mat-label>
+            <input matInput name="championshipsWon" [(ngModel)]="team.championshipsWon" type="number"
+              placeholder="championshipsWon" />
+          </mat-form-field>
+        </div>
+        <div class="button-container">
+          <button mat-raised-button color="primary" (click)="save()">
+            Save
+          </button>
+          <button mat-raised-button color="primary" class="delete" title="delete team" (click)="delete()">Delete
+            Team
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
