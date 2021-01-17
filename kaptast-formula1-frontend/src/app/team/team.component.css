@@ -2,6 +2,32 @@ mat-card {
     margin: 10px;
 }
 
+.header {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.button-container {
+    margin-top: 10px;
+}
+
 .button-container button {
     margin: 5px;
+}
+
+.spinner-div {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 100vh;
+}
+
+.container {
+    width: 25vw;
+    margin: auto;
+}
+
+form mat-form-field {
+    width: 100%;
 }
