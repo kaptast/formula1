@@ -13,6 +13,7 @@ export class AppConfigService {
     return this.http.get('/assets/config.json')
       .toPromise()
       .then(data => {
+        console.log('Config loaded!');
         this.appConfig = data;
       });
   }
