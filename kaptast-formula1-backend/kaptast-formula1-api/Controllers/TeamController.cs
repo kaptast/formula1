@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using kaptast_formula1_api.Services.Interfaces;
 using kaptast_formula1_api.ViewModels.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,6 +34,7 @@ namespace kaptast_formula1_api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Add(TeamViewModel teamViewModel)
         {
             await this._teamService.Add(teamViewModel);
@@ -41,6 +43,7 @@ namespace kaptast_formula1_api.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         public async Task<IActionResult> Update(TeamViewModel teamViewModel)
         {
             await this._teamService.Update(teamViewModel);
@@ -49,6 +52,7 @@ namespace kaptast_formula1_api.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(Guid id)
         {
             await this._teamService.Delete(id);
