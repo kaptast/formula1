@@ -1,5 +1,22 @@
+.menubar {
+    margin-right: 10px;
+    margin-left: auto;
+}
+
 a, a:visited {
-    padding: 5px;
+    padding: 10px;
     color: white;
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.logo:hover {
+    text-decoration: none;
+}
+
+.logoutButton {
+    cursor: pointer;
 }
