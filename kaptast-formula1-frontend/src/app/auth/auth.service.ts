@@ -41,7 +41,9 @@ export class AuthService {
 
     return this.http.post<boolean>(url, user, this.httpOptions)
       .pipe(
-        map(() => {
+        map(result => {
+          console.log(result);
+          this.setSession(result);
           console.log('login successful!');
           this.isLoggedIn = true;
           return true;
@@ -54,7 +56,11 @@ export class AuthService {
     const url = `${this.appConfigService.apiBaseUrl}/auth/logout`;
     return this.http.post<boolean>(url, null, this.httpOptions)
       .pipe(
-        tap(() => this.isLoggedIn = false),
+        tap(() => {
+          this.isLoggedIn = false;
+          localStorage.removeItem('access_token');
+          localStorage.removeItem('expires_at');
+        }),
         catchError(this.handleError<boolean>('error at logout', false))
       );
   }
@@ -69,5 +75,11 @@ export class AuthService {
       console.log(msg);
       return of(result as T);
     }
+  }
+
+  private setSession(authResult) {
+    console.log("setting token");
+    localStorage.setItem('access_token', authResult.token);
+    localStorage.setItem('expires_at', authResult.expires);
   }
 }
