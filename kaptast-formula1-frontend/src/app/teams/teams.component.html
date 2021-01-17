@@ -1,17 +1,48 @@
-<h2>Teams</h2>
-<ul>
-    <li *ngFor="let team of teams">
-        <a routerLink="/team/{{team.id}}">
-            {{team.name}}
-        </a>
-        <button class="delete" title="delete team" (click)="delete(team)">Delete</button>
-    </li>
-</ul>
-<div>
-    <label>Team name:
-        <input #teamName />
-    </label>
-    <button (click)="add(teamName.value); teamName.value=''">
-        Add
-    </button>
-</div>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Teams
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div *ngIf="isLoading" class="spinner-div">
+            <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+        </div>
+        <div *ngIf="!isLoading">
+            <div *ngIf="teams.length > 0">
+                <mat-nav-list>
+                    <mat-list-item *ngFor="let team of teams; last as isLast">
+                        <a matLine routerLink="/team/{{team.id}}">
+                            {{team.name}}
+                        </a>
+                        <button mat-icon-button title="delete team" (click)="delete(team)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <mat-divider *ngIf="isLast==false"></mat-divider>
+                    </mat-list-item>
+                </mat-nav-list>
+            </div>
+            <div *ngIf="teams.length === 0">
+                There are no teams in the database!
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Add Team
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <mat-label>Team name</mat-label>
+                <input matInput #teamName placeholder="Team name" />
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="add(teamName.value); teamName.value=''">
+                Add
+            </button>
+        </form>
+    </mat-card-content>
+</mat-card>

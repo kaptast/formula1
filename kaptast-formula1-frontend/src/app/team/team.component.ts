@@ -43,4 +43,8 @@ export class TeamComponent implements OnInit {
       .subscribe(() => this.location.back());
   }
 
+  checkboxValueChange(): void {
+    this.team.entryPaid = !this.team.entryPaid;
+  }
+
 }
