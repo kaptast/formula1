@@ -3,3 +3,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: #303030; }
+
+.alert-snackbar {
+    background: #ff0033;
+    color: white;
+  }

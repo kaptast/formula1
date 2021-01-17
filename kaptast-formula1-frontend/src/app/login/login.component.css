@@ -11,3 +11,11 @@ mat-form-field {
 button {
     width: 100%;
 }
+
+.spinner {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+}
