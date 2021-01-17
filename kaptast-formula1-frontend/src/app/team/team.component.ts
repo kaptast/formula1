@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { Team } from '../team';
 import { TeamService } from '../team.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-team',
@@ -16,7 +17,8 @@ export class TeamComponent implements OnInit {
   constructor(
     private teamService: TeamService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -45,6 +47,10 @@ export class TeamComponent implements OnInit {
 
   checkboxValueChange(): void {
     this.team.entryPaid = !this.team.entryPaid;
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
   }
 
 }

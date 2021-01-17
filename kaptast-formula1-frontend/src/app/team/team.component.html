@@ -1,11 +1,12 @@
 <div *ngIf="team" class="container">
   <mat-card>
-      <mat-card-header class="header">
-        <mat-card-title>
-          {{team.name | uppercase}} Formula 1 Team
-        </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
+    <mat-card-header class="header">
+      <mat-card-title>
+        {{team.name | uppercase}} Formula 1 Team
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="isLoggedIn()">
         <form>
           <div>
             <mat-form-field>
@@ -41,7 +42,22 @@
             </button>
           </div>
         </form>
-      </mat-card-content>
+      </div>
+      <div *ngIf="!isLoggedIn()">
+        <div>
+          Team name: {{team.name}}
+        </div>
+        <div>
+          Year of foundation: {{team.yearOfFoundation}}
+        </div>
+        <div>
+          Championships won: {{team.championshipsWon}}
+        </div>
+        <div>
+          <span>{{team.entryPaid === true ? "Team has paid the entry price." : "Team hasn't paid the entry price." }}</span>
+        </div>
+      </div>
+    </mat-card-content>
   </mat-card>
 </div>
 <div *ngIf="!team" class="spinner-div">
