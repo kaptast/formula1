@@ -28,10 +28,10 @@ namespace KaptastFormula1Api.Repository
             });
 
             //Test data
-            builder.Entity<Team>().HasData(new Team[] {
+            /*builder.Entity<Team>().HasData(new Team[] {
                 new Team() {Id = Guid.NewGuid(), Name = "Ferrari"},
                 new Team() {Id = Guid.NewGuid(), Name = "Mercedes"}
-            });
+            });*/
         }
     }
 }

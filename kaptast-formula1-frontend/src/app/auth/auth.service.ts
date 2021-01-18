@@ -1,10 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { Observable, of } from 'rxjs';
 import { tap, map, catchError } from 'rxjs/operators';
-import { AppConfigService } from '../app-config.service';
 
+import { AppConfigService } from '../app-config.service';
 import { User } from '../user';
 
 @Injectable({
@@ -13,22 +12,25 @@ import { User } from '../user';
 export class AuthService {
   isLoggedIn = false;
 
-  redirectUrl: string;
-
   constructor(
     private appConfigService: AppConfigService,
     private http: HttpClient
   ) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  }
+
   checkLogin() {
     const url = `${this.appConfigService.apiBaseUrl}/auth`;
-    console.log('cheking login status');
+
     return this.http.get(url)
       .toPromise()
-      .then(result => {
-        this.isLoggedIn = true;
+      .then(() => {
+        this.isLoggedIn = true; // set login status to true if the request was successful
       })
       .catch(err => {
+        // otherwise log the error and set the login status to false
         console.error(err);
         this.isLoggedIn = false;
       });
@@ -41,7 +43,8 @@ export class AuthService {
     return this.http.post<boolean>(url, user, this.httpOptions)
       .pipe(
         map(result => {
-          this.setSession(result);
+          // if the request was successful, then set the session token and set the login status to true
+          this.setSession(result); 
           this.isLoggedIn = true;
           return true;
         }),
@@ -54,6 +57,7 @@ export class AuthService {
     return this.http.post<boolean>(url, null, this.httpOptions)
       .pipe(
         tap(() => {
+          // if the request was successful, then remove the session token and set the login status to false
           this.isLoggedIn = false;
           this.removeSession();
         }),
@@ -65,10 +69,6 @@ export class AuthService {
     return localStorage.getItem('access_token');
   }
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  }
-
   private handleError<T>(msg = 'message', result?: T) {
     return (error: any): Observable<T> => {
       console.log(error);
@@ -78,7 +78,6 @@ export class AuthService {
   }
 
   private setSession(authResult): void {
-    console.log("setting token");
     localStorage.setItem('access_token', authResult.token);
     localStorage.setItem('expires_at', authResult.expires);
   }

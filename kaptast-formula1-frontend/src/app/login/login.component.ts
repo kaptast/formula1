@@ -24,16 +24,19 @@ export class LoginComponent implements OnInit {
     this.isLoading = true;
     this.authService.login(username, password)
       .subscribe(result => {
-        console.log(result);
         this.isLoading = false;
         if (!result) {
-          this.snackBar.open('Invalid credentials!', 'Close', {
-            duration: 5000,
-            panelClass: ['alert-snackbar']
-          });
+          this.openSnackBar();
         } else {
           this.location.back();
         }
       });
+  }
+
+  private openSnackBar(): void {
+    this.snackBar.open('Invalid credentials!', 'Close', {
+      duration: 5000,
+      panelClass: ['alert-snackbar']
+    });
   }
 }
