@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace KaptastFormula1Api.Middlewares
 {
+    /// <summary>
+    /// A middleware which catches and handles all the exceptions.
+    /// </summary>
     public class ErrorHandlerMiddleware
     {
         private readonly RequestDelegate _next;
