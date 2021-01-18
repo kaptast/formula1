@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace KaptastFormula1Api.Repository.Repositories
 {
+    /// <summary>
+    /// Abstract base class which implements the generic functions of <see cref="IRepository{T}"/>.
+    /// </summary>
+    /// <typeparam name="T">The type of the entities handled by the repository.</typeparam>
     public abstract class Repository<T> : IRepository<T> where T : IEntity
     {
         protected readonly FormulaDbContext _dbContext;
@@ -15,7 +19,7 @@ namespace KaptastFormula1Api.Repository.Repositories
         }
 
         /// <summary>
-        /// Add a <typeparamref name="T"/> entity to the database
+        /// Add a <see cref="IEntity"/> entity to the database
         /// </summary>
         /// <param name="entity">Entity to be added to the database</param>
         public void Add(T entity)
@@ -24,7 +28,7 @@ namespace KaptastFormula1Api.Repository.Repositories
         }
 
         /// <summary>
-        /// Deletes the <see cref="T"/> entry from the database
+        /// Deletes the <see cref="IEntity"/> entry from the database
         /// </summary>
         /// <param name="entity">Entity to be deleted from the database</param>
         public void Delete(T entity)
@@ -32,17 +36,7 @@ namespace KaptastFormula1Api.Repository.Repositories
             this._dbContext.Remove(entity);
         }
 
-        /// <summary>
-        /// Gets a <typeparamref name="T"/> stored in the database by id
-        /// </summary>
-        /// <param name="Id">Id of the <typeparamref name="T"/> to be queried</param>
-        /// <returns>The queried <typeparamref name="T"/> whose id was passed in the parameter</returns>
         public abstract Task<T> Get(Guid Id);
-
-        /// <summary>
-        /// Gets all <see cref="T"/> stored in the database
-        /// </summary>
-        /// <returns>An enumerable list with all the <see cref="T"/></returns>
         public abstract Task<List<T>> Get();
         
         /// <summary>
