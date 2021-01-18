@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 import { Team } from './team';
 import { AppConfigService } from './app-config.service';

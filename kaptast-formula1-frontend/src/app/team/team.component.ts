@@ -28,6 +28,7 @@ export class TeamComponent implements OnInit {
 
   getTeam(): void {
     const id = this.route.snapshot.paramMap.get('id');
+
     this.teamService.getTeam(id)
       .subscribe(team => {
         this.team = team;
@@ -37,6 +38,7 @@ export class TeamComponent implements OnInit {
 
   save(): void {
     this.isSaving = true;
+
     this.teamService.updateTeam(this.team)
       .subscribe(() => {
         this.isSaving = false;
@@ -56,5 +58,4 @@ export class TeamComponent implements OnInit {
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
-
 }
