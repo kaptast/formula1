@@ -2,6 +2,9 @@
 
 namespace KaptastFormula1Api.ViewModels.Models
 {
+    /// <summary>
+    /// Represent a Team object. Used to communicate with the api
+    /// </summary>
     public class TeamViewModel
     {
         public Guid Id { get; set; }
