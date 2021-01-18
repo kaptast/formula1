@@ -2,6 +2,9 @@
 
 namespace KaptastFormula1Api.ViewModels.Models
 {
+    /// <summary>
+    /// Represent an user object. Used to communicate with the api
+    /// </summary>
     public class UserViewModel
     {
         public Guid Id { get; set; }

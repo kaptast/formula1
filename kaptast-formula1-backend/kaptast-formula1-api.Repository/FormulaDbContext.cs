@@ -5,6 +5,9 @@ using System;
 
 namespace KaptastFormula1Api.Repository
 {
+    /// <summary>
+    /// Database context for storing Teams and Users.
+    /// </summary>
     public class FormulaDbContext : IdentityDbContext
     {
         public DbSet<Team> Teams { get; set; }
@@ -14,14 +17,11 @@ namespace KaptastFormula1Api.Repository
         {
         }
 
-        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Filename=:memory:");
-        }*/
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            // Set the unique constraint for team names
             builder.Entity<Team>(entity =>
             {
                 entity.HasIndex(e => e.Name).IsUnique();

@@ -20,6 +20,7 @@ namespace KaptastFormula1Api
             Host.CreateDefaultBuilder(args)
                 .ConfigureLogging(logging =>
                 {
+                    // Configura a logging service
                     logging.ClearProviders();
                     logging.AddConsole();
                 })

@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace KaptastFormula1Api.Repository.Repositories.Interfaces
 {
+    /// <summary>
+    /// An interface for CRUD database methods.
+    /// </summary>
+    /// <typeparam name="T">The type of the entities handled by the repository.</typeparam>
     public interface IRepository<T> where T : IEntity
     {
         Task<T> Get(Guid Id);

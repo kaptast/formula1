@@ -39,8 +39,10 @@ namespace KaptastFormula1Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Configure AutoMapper with the Assembly where profiles are located
             services.AddAutoMapper(typeof(TeamProfile));
 
+            // Set the CORS policy to allow any request
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -49,6 +51,7 @@ namespace KaptastFormula1Api
                 });
             });
 
+            // Configure in memory SQLite Database with the correct database context
             var connection = new SqliteConnection("DataSource=file::memory:?cache=shared");
             connection.Open();
             services.AddDbContext<FormulaDbContext>(options =>
@@ -56,15 +59,19 @@ namespace KaptastFormula1Api
                 options.UseSqlite(connection);
             });
 
+            // Add Identity service and configure it to use the correct database context
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<FormulaDbContext>()
                 .AddDefaultTokenProviders();
+
+            // Configure password policy to allow the test password
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
             });
 
+            // Configure JWT Bearer token handling
             var key = Encoding.ASCII.GetBytes(Configuration.GetSection("Token").Value);
             services.AddAuthentication(options =>
             {
@@ -86,6 +93,7 @@ namespace KaptastFormula1Api
 
             services.AddControllers();
 
+            // Register services
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<ITeamService, TeamService>();
             services.AddScoped<IAuthService, AuthService>();
@@ -94,8 +102,10 @@ namespace KaptastFormula1Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, FormulaDbContext db, IAuthService authService)
         {
+            // Register the exception handling middleware
             app.UseMiddleware<ErrorHandlerMiddleware>();
 
+            // Create the database tables if they haven't been created yet.
             db.Database.EnsureCreated();
 
             app.UseHttpsRedirection();
@@ -107,6 +117,7 @@ namespace KaptastFormula1Api
             app.UseAuthentication();
             app.UseAuthorization();
 
+            // Register test user
             authService.Register(new ViewModels.Models.UserViewModel { UserName = "admin", Password = "f1test2018" });
 
             app.UseEndpoints(endpoints =>
