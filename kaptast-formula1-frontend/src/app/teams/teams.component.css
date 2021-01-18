@@ -7,10 +7,19 @@ mat-card {
 
 form button {
     margin: 10px;
+    min-width: 100px;
 }
 
 .spinner-div {
     display:flex;
     justify-content:center;
     align-items:center;
+}
+
+.spinner {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
 }

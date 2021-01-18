@@ -41,6 +41,9 @@
                 <input matInput #teamName placeholder="Team name" />
             </mat-form-field>
             <button mat-raised-button color="primary" (click)="add(teamName.value); teamName.value=''">
+                <div class="spinner" *ngIf="isAdding">
+                    <mat-progress-spinner mode="indeterminate" diameter="20" color="accent"></mat-progress-spinner>
+                </div>
                 Add
             </button>
         </form>

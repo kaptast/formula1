@@ -23,6 +23,14 @@ mat-card {
     height: 100vh;
 }
 
+.spinner {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+}
+
 .container {
     width: 35em;
     margin: auto;
