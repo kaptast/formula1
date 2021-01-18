@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace kaptast_formula1_api.ViewModels.Models
+namespace KaptastFormula1Api.ViewModels.Models
 {
     public class TeamViewModel
     {

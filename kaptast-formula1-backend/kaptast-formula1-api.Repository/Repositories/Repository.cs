@@ -1,10 +1,10 @@
-﻿using kaptast_formula1_api.Repository.Entities.Interfaces;
-using kaptast_formula1_api.Repository.Repositories.Interfaces;
+﻿using KaptastFormula1Api.Repository.Entities.Interfaces;
+using KaptastFormula1Api.Repository.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace kaptast_formula1_api.Repository.Repositories
+namespace KaptastFormula1Api.Repository.Repositories
 {
     public abstract class Repository<T> : IRepository<T> where T : IEntity
     {
@@ -15,7 +15,7 @@ namespace kaptast_formula1_api.Repository.Repositories
         }
 
         /// <summary>
-        /// Add a <see cref="T"/> entity to the database
+        /// Add a <typeparamref name="T"/> entity to the database
         /// </summary>
         /// <param name="entity">Entity to be added to the database</param>
         public void Add(T entity)
@@ -33,10 +33,10 @@ namespace kaptast_formula1_api.Repository.Repositories
         }
 
         /// <summary>
-        /// Gets a <see cref="T"/> stored in the database by id
+        /// Gets a <typeparamref name="T"/> stored in the database by id
         /// </summary>
-        /// <param name="Id">Id of the <see cref="T"/> to be queried</param>
-        /// <returns>The queried <see cref="T"/> whose id was passed in the parameter</returns>
+        /// <param name="Id">Id of the <typeparamref name="T"/> to be queried</param>
+        /// <returns>The queried <typeparamref name="T"/> whose id was passed in the parameter</returns>
         public abstract Task<T> Get(Guid Id);
 
         /// <summary>

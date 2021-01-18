@@ -13,6 +13,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class TeamComponent implements OnInit {
   @Input() team: Team;
+  isSaving: boolean = false;
 
   constructor(
     private teamService: TeamService,
@@ -35,9 +36,12 @@ export class TeamComponent implements OnInit {
   }
 
   save(): void {
-    console.log(this.team);
+    this.isSaving = true;
     this.teamService.updateTeam(this.team)
-      .subscribe(() => this.getTeam());
+      .subscribe(() => {
+        this.isSaving = false;
+        this.getTeam();
+      });
   }
 
   delete(): void {

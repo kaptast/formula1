@@ -1,9 +1,9 @@
-﻿using kaptast_formula1_api.Repository.Entities.Interfaces;
+﻿using KaptastFormula1Api.Repository.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace kaptast_formula1_api.Repository.Repositories.Interfaces
+namespace KaptastFormula1Api.Repository.Repositories.Interfaces
 {
     public interface IRepository<T> where T : IEntity
     {

@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using kaptast_formula1_api.Repository;
-using kaptast_formula1_api.Repository.Repositories;
-using kaptast_formula1_api.Repository.Repositories.Interfaces;
-using kaptast_formula1_api.Services.Interfaces;
-using kaptast_formula1_api.Services.Services;
-using kaptast_formula1_api.ViewModels.Profiles;
+using KaptastFormula1Api.Middlewares;
+using KaptastFormula1Api.Repository;
+using KaptastFormula1Api.Repository.Repositories;
+using KaptastFormula1Api.Repository.Repositories.Interfaces;
+using KaptastFormula1Api.Services.Interfaces;
+using KaptastFormula1Api.Services.Services;
+using KaptastFormula1Api.ViewModels.Profiles;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,7 +25,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
-namespace kaptast_formula1_api
+namespace KaptastFormula1Api
 {
     public class Startup
     {
@@ -50,7 +51,6 @@ namespace kaptast_formula1_api
 
             var connection = new SqliteConnection("DataSource=file::memory:?cache=shared");
             connection.Open();
-
             services.AddDbContext<FormulaDbContext>(options =>
             {
                 options.UseSqlite(connection);
@@ -65,7 +65,6 @@ namespace kaptast_formula1_api
                 options.Password.RequireNonAlphanumeric = false;
             });
 
-            var token = Configuration.GetSection("Token").Value;
             var key = Encoding.ASCII.GetBytes(Configuration.GetSection("Token").Value);
             services.AddAuthentication(options =>
             {
@@ -95,10 +94,7 @@ namespace kaptast_formula1_api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, FormulaDbContext db, IAuthService authService)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             db.Database.EnsureCreated();
 

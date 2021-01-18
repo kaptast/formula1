@@ -12,6 +12,7 @@ import { TeamService } from '../team.service';
 export class TeamsComponent implements OnInit {
   teams: Team[];
   isLoading: boolean;
+  isAdding: boolean = false;
 
   constructor(
     private teamService: TeamService,
@@ -37,8 +38,11 @@ export class TeamsComponent implements OnInit {
       return;
     }
 
+    this.isAdding = true;
+
     this.teamService.addTeam({ name } as Team)
       .subscribe(_ => {
+        this.isAdding = false;
         this.getTeams();
       });
   }

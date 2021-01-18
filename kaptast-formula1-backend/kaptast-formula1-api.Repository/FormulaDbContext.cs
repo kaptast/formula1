@@ -1,9 +1,9 @@
-﻿using kaptast_formula1_api.Repository.Entities;
+﻿using KaptastFormula1Api.Repository.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace kaptast_formula1_api.Repository
+namespace KaptastFormula1Api.Repository
 {
     public class FormulaDbContext : IdentityDbContext
     {
@@ -22,6 +22,12 @@ namespace kaptast_formula1_api.Repository
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<Team>(entity =>
+            {
+                entity.HasIndex(e => e.Name).IsUnique();
+            });
+
+            //Test data
             builder.Entity<Team>().HasData(new Team[] {
                 new Team() {Id = Guid.NewGuid(), Name = "Ferrari"},
                 new Team() {Id = Guid.NewGuid(), Name = "Mercedes"}
