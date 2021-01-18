@@ -1,9 +1,0 @@
-C:\Users\kapta\source\repos\kaptast-fullstack\kaptast-formula1-backend\kaptast-formula1-api.Repository\bin\Debug\netcoreapp3.1\kaptast-formula1-api.Repository.deps.json
-C:\Users\kapta\source\repos\kaptast-fullstack\kaptast-formula1-backend\kaptast-formula1-api.Repository\bin\Debug\netcoreapp3.1\kaptast-formula1-api.Repository.dll
-C:\Users\kapta\source\repos\kaptast-fullstack\kaptast-formula1-backend\kaptast-formula1-api.Repository\obj\Debug\netcoreapp3.1\kaptast-formula1-api.Repository.AssemblyInfoInputs.cache
-C:\Users\kapta\source\repos\kaptast-fullstack\kaptast-formula1-backend\kaptast-formula1-api.Repository\obj\Debug\netcoreapp3.1\kaptast-formula1-api.Repository.AssemblyInfo.cs
-C:\Users\kapta\source\repos\kaptast-fullstack\kaptast-formula1-backend\kaptast-formula1-api.Repository\bin\Debug\netcoreapp3.1\kaptast-formula1-api.Repository.pdb
-C:\Users\kapta\source\repos\kaptast-fullstack\kaptast-formula1-backend\kaptast-formula1-api.Repository\obj\Debug\netcoreapp3.1\kaptast-formula1-api.Repository.dll
-C:\Users\kapta\source\repos\kaptast-fullstack\kaptast-formula1-backend\kaptast-formula1-api.Repository\obj\Debug\netcoreapp3.1\kaptast-formula1-api.Repository.pdb
-C:\Users\kapta\source\repos\kaptast-fullstack\kaptast-formula1-backend\kaptast-formula1-api.Repository\obj\Debug\netcoreapp3.1\kaptast-formula1-api.Repository.csprojAssemblyReference.cache
-C:\Users\kapta\source\repos\kaptast-fullstack\kaptast-formula1-backend\kaptast-formula1-api.Repository\obj\Debug\netcoreapp3.1\kaptast-formula1-api.Repository.csproj.CoreCompileInputs.cache
