@@ -22,6 +22,12 @@ namespace KaptastFormula1Api.Repository
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<Team>(entity =>
+            {
+                entity.HasIndex(e => e.Name).IsUnique();
+            });
+
+            //Test data
             builder.Entity<Team>().HasData(new Team[] {
                 new Team() {Id = Guid.NewGuid(), Name = "Ferrari"},
                 new Team() {Id = Guid.NewGuid(), Name = "Mercedes"}
