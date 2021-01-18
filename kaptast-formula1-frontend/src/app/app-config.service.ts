@@ -9,15 +9,18 @@ export class AppConfigService {
 
   constructor(private http: HttpClient) { }
 
+  // Loads the config.json
+  // Runs at app initialization
   loadAppConfig() {
     return this.http.get('/assets/config.json')
       .toPromise()
       .then(data => {
-        console.log('Config loaded!');
+        console.info('Config loaded!');
         this.appConfig = data;
       });
   }
 
+  // Gets the Base API url set in config.json
   get apiBaseUrl() {
     if (!this.appConfig) {
       throw Error('Config file not loaded!');

@@ -16,40 +16,43 @@ export class TeamService {
     private http: HttpClient
   ) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+  }
+
   getTeams(): Observable<Team[]> {
     const url = `${this.appConfigService.apiBaseUrl}/team`;
+
     return this.http.get<Team[]>(url)
       .pipe(
-        catchError(this.handleError<Team[]>('getTeams', []))
+        catchError(this.handleError<Team[]>('error getting Teams', []))
       );
   }
 
   getTeam(id: string): Observable<Team> {
     const url = `${this.appConfigService.apiBaseUrl}/team/${id}`;
-    console.log(url);
+
     return this.http.get<Team>(url)
       .pipe(
-        catchError(this.handleError<Team>(`getTeam id=${id}`))
+        catchError(this.handleError<Team>(`error getting Team, id=${id}`))
       )
   }
 
   updateTeam(team: Team): Observable<any> {
     const url = `${this.appConfigService.apiBaseUrl}/team`;
-    console.log(team);
-    console.log(url);
+
     return this.http.put(url, team, this.httpOptions)
       .pipe(
-        catchError(this.handleError<any>('updateTeam'))
+        catchError(this.handleError<any>('error updating Team'))
       );
   }
 
   addTeam(team: Team): Observable<Team> {
     const url = `${this.appConfigService.apiBaseUrl}/team`;
-    console.log(team);
-    console.log(url);
+
     return this.http.post<Team>(url, team, this.httpOptions)
       .pipe(
-        catchError(this.handleError<Team>('addTeam'))
+        catchError(this.handleError<Team>('error adding Team'))
       );
   }
 
@@ -59,14 +62,9 @@ export class TeamService {
 
     return this.http.delete<Team>(url, this.httpOptions)
       .pipe(
-        catchError(this.handleError<Team>('deleteTeam'))
+        catchError(this.handleError<Team>(`error deleting Team, id=${id}`))
       );
   }
-
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-  }
-
 
   private handleError<T>(msg = 'message', result?: T) {
     return (error: any): Observable<T> => {
