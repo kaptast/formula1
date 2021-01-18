@@ -77,11 +77,6 @@ export class TeamComponent implements OnInit {
   }
 
   private validateChampionships(): boolean {
-    if (isNaN(this.team.championshipsWon)) {
-      this.openSnackBar('Number of championships is not a number!');
-      return false;
-    }
-
     if (this.team.championshipsWon < 0) {
       this.openSnackBar("Number of championships can't be less than 0!");
       return false;
@@ -91,11 +86,6 @@ export class TeamComponent implements OnInit {
   }
 
   private validateFoundation(): boolean {
-    if (isNaN(this.team.yearOfFoundation)) {
-      this.openSnackBar('Year of foundation is not a number!');
-      return false;
-    }
-
     const currentYear: number = new Date().getFullYear();
     if (this.team.yearOfFoundation > currentYear) {
       this.openSnackBar(`Year of foundation can't be more than ${currentYear}!`);
