@@ -44,8 +44,12 @@ namespace KaptastFormula1Api.Controllers
             if (result.Succeeded)
             {
                 var authSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["Token"]));
-                var token = new JwtSecurityToken(expires: DateTime.Now.AddMinutes(5), signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256));
-                return Ok( new
+                var token = new JwtSecurityToken(
+                    expires: DateTime.Now.AddHours(1),
+                    signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+                );
+
+                return Ok(new
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                     expiration = token.ValidTo
