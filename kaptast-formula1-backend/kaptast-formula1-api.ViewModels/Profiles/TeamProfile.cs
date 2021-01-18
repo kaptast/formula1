@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using kaptast_formula1_api.Repository.Entities;
-using kaptast_formula1_api.ViewModels.Models;
+using KaptastFormula1Api.Repository.Entities;
+using KaptastFormula1Api.ViewModels.Models;
 
-namespace kaptast_formula1_api.ViewModels.Profiles
+namespace KaptastFormula1Api.ViewModels.Profiles
 {
     public class TeamProfile : Profile
     {

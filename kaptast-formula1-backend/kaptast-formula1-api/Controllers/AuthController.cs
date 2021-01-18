@@ -4,8 +4,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using kaptast_formula1_api.Services.Interfaces;
-using kaptast_formula1_api.ViewModels.Models;
+using KaptastFormula1Api.Services.Interfaces;
+using KaptastFormula1Api.ViewModels.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace kaptast_formula1_api.Controllers
+namespace KaptastFormula1Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

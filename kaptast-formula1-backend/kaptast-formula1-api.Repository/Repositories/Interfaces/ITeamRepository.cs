@@ -1,6 +1,6 @@
-﻿using kaptast_formula1_api.Repository.Entities;
+﻿using KaptastFormula1Api.Repository.Entities;
 
-namespace kaptast_formula1_api.Repository.Repositories.Interfaces
+namespace KaptastFormula1Api.Repository.Repositories.Interfaces
 {
     public interface ITeamRepository : IRepository<Team>
     {

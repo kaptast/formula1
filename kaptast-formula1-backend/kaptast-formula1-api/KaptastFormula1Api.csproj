@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>kaptast_formula1_api</RootNamespace>
+    <RootNamespace>KaptastFormula1Api</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

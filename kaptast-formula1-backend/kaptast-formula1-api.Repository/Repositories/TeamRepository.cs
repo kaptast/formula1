@@ -1,5 +1,5 @@
-﻿using kaptast_formula1_api.Repository.Entities;
-using kaptast_formula1_api.Repository.Repositories.Interfaces;
+﻿using KaptastFormula1Api.Repository.Entities;
+using KaptastFormula1Api.Repository.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kaptast_formula1_api.Repository.Repositories
+namespace KaptastFormula1Api.Repository.Repositories
 {
     public class TeamRepository : Repository<Team>, ITeamRepository
     {

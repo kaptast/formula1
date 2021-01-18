@@ -1,9 +1,9 @@
-﻿using kaptast_formula1_api.Repository.Entities;
+﻿using KaptastFormula1Api.Repository.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace kaptast_formula1_api.Repository
+namespace KaptastFormula1Api.Repository
 {
     public class FormulaDbContext : IdentityDbContext
     {

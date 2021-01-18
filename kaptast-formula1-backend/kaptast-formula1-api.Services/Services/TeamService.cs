@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using kaptast_formula1_api.Repository.Entities;
-using kaptast_formula1_api.Repository.Repositories.Interfaces;
-using kaptast_formula1_api.Services.Interfaces;
-using kaptast_formula1_api.ViewModels.Models;
+using KaptastFormula1Api.Repository.Entities;
+using KaptastFormula1Api.Repository.Repositories.Interfaces;
+using KaptastFormula1Api.Services.Interfaces;
+using KaptastFormula1Api.ViewModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kaptast_formula1_api.Services.Services
+namespace KaptastFormula1Api.Services.Services
 {
     public class TeamService : ITeamService
     {

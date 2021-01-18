@@ -1,7 +1,7 @@
-﻿using kaptast_formula1_api.Repository.Entities.Interfaces;
+﻿using KaptastFormula1Api.Repository.Entities.Interfaces;
 using System;
 
-namespace kaptast_formula1_api.Repository.Entities
+namespace KaptastFormula1Api.Repository.Entities
 {
     public class Team : IEntity
     {
