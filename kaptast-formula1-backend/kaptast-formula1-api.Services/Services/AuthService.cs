@@ -24,10 +24,6 @@ namespace kaptast_formula1_api.Services.Services
         {
             var user = new IdentityUser() { UserName = userModel.UserName };
             var result = await _userManager.CreateAsync(user, userModel.Password);
-            if (result.Succeeded)
-            {
-                await _signInManager.SignInAsync(user, isPersistent: true);
-            }
         }
 
         public async Task<SignInResult> Login(UserViewModel user)

@@ -15,7 +15,7 @@
                         <a matLine routerLink="/team/{{team.id}}">
                             {{team.name}}
                         </a>
-                        <button mat-icon-button title="delete team" (click)="delete(team)">
+                        <button *ngIf="isLoggedIn()" mat-icon-button title="delete team" (click)="delete(team)">
                             <mat-icon>delete</mat-icon>
                         </button>
                         <mat-divider *ngIf="isLast==false"></mat-divider>
@@ -28,7 +28,7 @@
         </div>
     </mat-card-content>
 </mat-card>
-<mat-card>
+<mat-card *ngIf="isLoggedIn()">
     <mat-card-header>
         <mat-card-title>
             Add Team

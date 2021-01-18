@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 
 import { Team } from '../team';
 import { TeamService } from '../team.service';
@@ -12,7 +13,10 @@ export class TeamsComponent implements OnInit {
   teams: Team[];
   isLoading: boolean;
 
-  constructor(private teamService: TeamService) { }
+  constructor(
+    private teamService: TeamService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.getTeams();
@@ -43,6 +47,10 @@ export class TeamsComponent implements OnInit {
     this.teams = this.teams.filter(t => t != team);
     this.teamService.deleteTeam(team)
       .subscribe();
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
   }
 
 }

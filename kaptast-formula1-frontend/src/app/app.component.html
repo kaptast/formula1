@@ -1,10 +1,11 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-  <span>{{title}}</span>
+  <span><a routerLink="" class="logo">{{title}}</a></span>
   <mat-divider [vertical]="true"></mat-divider>
-  <nav>
+  <nav class="menubar">
     <a routerLink="/teams">Teams</a>
-    <a routerLink="/login">Login</a>
+    <a *ngIf="!isLoggedIn()" routerLink="/login">Login</a>
+    <a *ngIf="isLoggedIn()" (click)="logout()" class="logoutButton">Logout</a>
   </nav>
 </mat-toolbar-row>
 </mat-toolbar>
