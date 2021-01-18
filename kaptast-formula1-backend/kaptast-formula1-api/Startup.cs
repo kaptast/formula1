@@ -52,7 +52,7 @@ namespace KaptastFormula1Api
             });
 
             // Configure in memory SQLite Database with the correct database context
-            var connection = new SqliteConnection("DataSource=file::memory:?cache=shared");
+            var connection = new SqliteConnection("DataSource=:memory:");
             connection.Open();
             services.AddDbContext<FormulaDbContext>(options =>
             {
