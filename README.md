@@ -3,4 +3,4 @@
 ## Development server
 
 Run the project with IIS then the angular app.
-Or run `dotnet KaptastFormula1Api.dll` and change the `apiBaseUrl` to `http://localhost:5000/` in `config.js`.
+Or run `dotnet KaptastFormula1Api.dll` and change the `apiBaseUrl` to `https://localhost:5001/` in `config.js`.
